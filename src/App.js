@@ -9,7 +9,7 @@ import Home from "./components/Home";
 
 function App() {
 
-
+console.log(harvardArt)
   return (
     <div>
         <GalleryNavigation galleries = {harvardArt.records} />
