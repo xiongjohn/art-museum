@@ -9,13 +9,13 @@ import Home from "./components/Home";
 
 function App() {
 
-console.log(harvardArt)
+console.log("app", harvardArt)
   return (
     <div>
         <GalleryNavigation galleries = {harvardArt.records} />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
-          <Route path="/galleries/:galleryId" element={<GalleryView galleries = {harvardArt.records}/>} />
+          <Route path="/galleries/:galleryId/*" element={<GalleryView galleries = {harvardArt.records}/>} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
     </div>
