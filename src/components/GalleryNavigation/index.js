@@ -3,7 +3,6 @@ import "./GalleryNavigation.css"
 
 function GalleryNavigation ({ galleries }) {
 
-    console.log(galleries[1].galleryId)
     return (
         <nav>
             <NavLink to="/" end><h1>Galleries</h1></NavLink>
