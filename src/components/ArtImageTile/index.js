@@ -2,16 +2,23 @@ import { Link, useParams } from "react-router-dom";
 
 function ArtImageTile({ art }){
     let { galleryId } = useParams()
-    let gallery = galleryId
-    console.log("artimagetile", gallery)
-    console.log(useParams().galleryId)
+    // let gallery = galleryId
+    console.log("artimagetile", art)
+    console.log(useParams())
+    // console.log(useParams().galleryId)
 
+    let imageTile = art.objects.map((art, index)=> {
+        return (
+            <Link key={index} to={"/galleries/"+galleryId+"/art/" +art.images[0].imageid}>
+                <img src={art.images[0].baseimageurl}></img>
+            </Link>
+
+        )
+    })
 
     return (
         <div>
-            <Link to={"/galleries/"+ gallery + "/art/" + art.imageid}>
-                <img src={art.baseimageurl}></img>
-            </Link>
+            {imageTile}
         </div>
     )
 }
