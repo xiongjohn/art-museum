@@ -6,8 +6,6 @@ function GalleryView({ galleries }) {
   let { galleryId } = useParams();
   let gallery = galleries.find((x) => x.galleryid == galleryId);
 
-  console.log("view", gallery);
-
   return (
     <div>
       <h1>Hello from GalleryView</h1>
