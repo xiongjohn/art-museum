@@ -1,9 +1,9 @@
 function ArtDesciption() {
-    return (
-        <div>
-            <h2>ArtDesciption</h2>
-        </div>
-    )
+  return (
+    <div>
+      <h2>ArtDesciption</h2>
+    </div>
+  );
 }
 
-export default ArtDesciption
+export default ArtDesciption;
