@@ -5,6 +5,7 @@ import PageNotFound from "./components/PageNotFound";
 import harvardArt from "./data/harvardArt";
 import Home from "./components/Home";
 import ArtImageTile from "./components/ArtImageTile";
+import ArtDesciption from "./components/ArtDescription";
 
 function App() {
   let { galleryId } = useParams();
@@ -33,6 +34,10 @@ function App() {
           element={<GalleryView galleries={harvardArt.records} />}
         >
           {artImages}
+          <Route
+            path="/galleries/:galleryId/art/:artID"
+            element={<ArtDesciption />}
+          />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
