@@ -1,15 +1,12 @@
-import { Outlet, Route, Routes, useParams } from "react-router-dom";
-import ArtImageTile from "../ArtImageTile";
-import Home from "../Home";
+import { Outlet, useParams } from "react-router-dom";
 
 function GalleryView({ galleries }) {
   let { galleryId } = useParams();
   let gallery = galleries.find((x) => x.galleryid == galleryId);
 
   return (
-    <div>
-      <h1>Hello from GalleryView</h1>
-      <h2>{gallery.name}</h2>
+    <div className="wrapper">
+      <h1 className="text-center">{gallery.name}</h1>
       <Outlet context={gallery} />
     </div>
   );

@@ -7,16 +7,18 @@ function ArtImageTile() {
   let imageTile = art.objects.map((artImages) => {
     return artImages.images.map((image, index) => {
       return (
-        <Link
-          key={index}
-          to={"/galleries/" + galleryId + "/art/" + image.imageid}
-        >
-          <img src={image.baseimageurl}></img>
-        </Link>
+        <div className="">
+          <Link
+            key={index}
+            to={"/galleries/" + galleryId + "/art/" + image.imageid}
+          >
+            <img src={image.baseimageurl} className="gallery-images"></img>
+          </Link>
+        </div>
       );
     });
   });
 
-  return <div>{imageTile}</div>;
+  return <div className="grid">{imageTile}</div>;
 }
 export default ArtImageTile;
