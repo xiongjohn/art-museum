@@ -29,3 +29,30 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.small-image {
+  max-width: 100%;
+}
+
+.art-list {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(12.5%, 1fr));
+}
+
+.selected-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  text-transform: capitalize;
+}

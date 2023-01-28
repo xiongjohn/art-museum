@@ -1,8 +1,10 @@
 import { useOutletContext, useParams, Link } from "react-router-dom";
 
 function ArtDesciption() {
-  let { artID } = useParams();
+  let { artID, galleryId } = useParams();
   const art = useOutletContext();
+
+  console.log("galleryID", galleryId);
 
   let imageArray = [];
   let descriptions = [];
@@ -13,6 +15,15 @@ function ArtDesciption() {
     }
   }
 
+  let artPhotos = descriptions.images.map((photo, index) => {
+    return (
+      <div key={index}>
+        <Link to={"/galleries/" + galleryId + "/art/" + photo.imageid}>
+          <img src={photo.baseimageurl} className="small-image" />
+        </Link>
+      </div>
+    );
+  });
   let galleryName = art.name;
 
   console.log("gallery", art);
@@ -20,10 +31,32 @@ function ArtDesciption() {
   console.log("image", imageArray);
   console.log("description", descriptions);
 
+  let imageDescription = "";
+
+  if (descriptions.description) {
+    imageDescription = (
+      <li>
+        description:
+        {descriptions.description};
+      </li>
+    );
+  }
+
   return (
     <div>
-      <h2>ArtDesciption</h2>
-      <img src={imageArray.baseimageurl} />
+      <a href={descriptions.url}>
+        <img src={imageArray.baseimageurl} className="selected-img" />
+      </a>
+      <p>Photo © {imageArray.copyright}</p>
+      <h2>{descriptions.title}</h2>
+      <ul>
+        <li>Dated: {descriptions.dated}</li>
+        <li>Dimensions: {descriptions.dimensions}</li>
+        {imageDescription}
+        <li>Medium: {descriptions.medium}</li>
+        <li>Culture: {descriptions.culture}</li>
+      </ul>
+      <div className="art-list">{artPhotos}</div>
       <Link to="..">
         <h3>Return to {galleryName} gallery</h3>
       </Link>
