@@ -3,19 +3,20 @@ import "./GalleryNavigation.css";
 
 function GalleryNavigation({ galleries }) {
   return (
-    <nav>
+    <nav className="gallery-navigation">
       <NavLink to="/" end>
-        <h2 className="text-center">Galleries</h2>
+        <h2 className="home text-center ">Harvard Art Museum</h2>
       </NavLink>
-      <div className="nav-grid">
+
+      <ul className="nav-item d-flex flex-wrap gap-4 justify-content-center pt-2">
         {galleries.map((gallery) => (
-          <div key={gallery.id}>
-            <NavLink to={"/galleries/" + gallery.galleryid}>
+          <li key={gallery.id}>
+            <NavLink to={"/galleries/" + gallery.galleryid} className="p-2">
               {gallery.name}
             </NavLink>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </nav>
   );
 }

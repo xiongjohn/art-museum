@@ -1,4 +1,5 @@
 import { useOutletContext, useParams, Link } from "react-router-dom";
+import "../../index.css";
 
 function ArtDesciption() {
   let { artID, galleryId } = useParams();
@@ -17,7 +18,7 @@ function ArtDesciption() {
 
   let artPhotos = descriptions.images.map((photo, index) => {
     return (
-      <div key={index}>
+      <div key={index} className="border-hover">
         <Link to={"/galleries/" + galleryId + "/art/" + photo.imageid}>
           <img src={photo.baseimageurl} className="small-image" />
         </Link>
@@ -35,30 +36,33 @@ function ArtDesciption() {
 
   if (descriptions.description) {
     imageDescription = (
-      <li>
-        description:
-        {descriptions.description};
-      </li>
+      <li className="p-2">description: {descriptions.description};</li>
     );
   }
 
   return (
     <div>
-      <a href={descriptions.url}>
+      <a href={descriptions.url} className="d-flex justify-content-center">
         <img src={imageArray.baseimageurl} className="selected-img" />
       </a>
-      <p>Photo © {imageArray.copyright}</p>
-      <h2>{descriptions.title}</h2>
-      <ul>
-        <li>Dated: {descriptions.dated}</li>
-        <li>Dimensions: {descriptions.dimensions}</li>
+      <p className="text-center text-secondary box-shadow">
+        Photo © President and Fellows of Harvard College
+      </p>
+      <h2>Title : {descriptions.title}</h2>
+      <ul className="description-list ps-0">
+        <li className="p-2">Dated: {descriptions.dated}</li>
+        <li className="p-2">Dimensions: {descriptions.dimensions}</li>
         {imageDescription}
-        <li>Medium: {descriptions.medium}</li>
-        <li>Culture: {descriptions.culture}</li>
+        <li className="p-2">Medium: {descriptions.medium}</li>
+        <li className="p-2">Culture: {descriptions.culture}</li>
       </ul>
-      <div className="art-list">{artPhotos}</div>
-      <Link to="..">
-        <h3>Return to {galleryName} gallery</h3>
+      <div className="art-list d-flex  gap-4  align-items-center flex-nowrap overflow-auto">
+        {artPhotos}
+      </div>
+      <Link to=".." className="text-decoration-none ">
+        <h3 className="text-black return-link pb-5">
+          Return to {galleryName} gallery
+        </h3>
       </Link>
     </div>
   );

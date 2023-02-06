@@ -11,3 +11,39 @@ nav div {
 .selected-img {
   max-width: 50%;
 }
+
+.zero-margin {
+  margin: 0;
+}
+
+nav {
+  padding: 1em;
+}
+
+.gallery-navigation {
+  color: black;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-navigation a {
+  color: black;
+  border: 1px solid white;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+.gallery-navigation a:hover {
+  /* border: 1px solid black; */
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  padding: 0;
+}
+
+.home {
+  margin: 0;
+  padding: 0;
+}
