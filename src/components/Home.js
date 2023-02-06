@@ -1,10 +1,9 @@
 function Home() {
   return (
     <div>
-      <h2 className="text-center">Harvard Art Museum</h2>
-      <p className="text-center">
+      <h2 className="text-center pt-5">
         Look, but Don't Touch. Please select a Gallery in the navigation bar.
-      </p>
+      </h2>
     </div>
   );
 }

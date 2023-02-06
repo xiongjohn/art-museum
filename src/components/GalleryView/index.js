@@ -6,7 +6,7 @@ function GalleryView({ galleries }) {
 
   return (
     <div className="wrapper">
-      <h1 className="text-center">{gallery.name}</h1>
+      <h1 className="text-center p-4">{gallery.name}</h1>
       <Outlet context={gallery} />
     </div>
   );
