@@ -5,6 +5,7 @@ function ArtImageTile() {
   const art = useOutletContext();
 
   let imageTile = art.objects.map((artImages) => {
+    let imageAlt = artImages.title;
     return artImages.images.map((image, index) => {
       return (
         <div>
@@ -15,6 +16,7 @@ function ArtImageTile() {
             <img
               src={image.baseimageurl}
               className="gallery-images border-hover"
+              alt={imageAlt}
             ></img>
           </Link>
         </div>
