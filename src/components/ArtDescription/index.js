@@ -10,8 +10,10 @@ function ArtDesciption() {
   let imageArray = [];
   let descriptions = [];
   for (let i = 0; i < art.objects.length; i++) {
-    if (art.objects[i].images.find((x) => x.imageid === artID) !== undefined) {
-      imageArray = art.objects[i].images.find((x) => x.imageid === artID);
+    // eslint-disable-next-line
+    if (art.objects[i].images.find((x) => x.imageid == artID) !== undefined) {
+      // eslint-disable-next-line
+      imageArray = art.objects[i].images.find((x) => x.imageid == artID);
       descriptions = art.objects[i];
     }
   }
