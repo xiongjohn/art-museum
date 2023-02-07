@@ -60,7 +60,7 @@ function ArtDesciption() {
         {artPhotos}
       </div>
       <Link to=".." className="text-decoration-none ">
-        <h3 className="text-black return-link pb-5">
+        <h3 className="text-black text-center return-link pb-5 mt-5 pt-5">
           Return to {galleryName} gallery
         </h3>
       </Link>
