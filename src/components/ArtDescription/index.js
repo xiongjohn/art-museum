@@ -53,8 +53,8 @@ function ArtDesciption() {
       <p className="text-center text-secondary box-shadow">
         Photo © President and Fellows of Harvard College
       </p>
-      <h2>Title : {descriptions.title}</h2>
-      <ul className="description-list ps-0">
+      <h2 className="ps-2">Title : {descriptions.title}</h2>
+      <ul className="description-list ps-2">
         <li className="p-2">Dated: {descriptions.dated}</li>
         <li className="p-2">Dimensions: {descriptions.dimensions}</li>
         {imageDescription}
