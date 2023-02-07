@@ -10,8 +10,8 @@ function ArtDesciption() {
   let imageArray = [];
   let descriptions = [];
   for (let i = 0; i < art.objects.length; i++) {
-    if (art.objects[i].images.find((x) => x.imageid == artID) !== undefined) {
-      imageArray = art.objects[i].images.find((x) => x.imageid == artID);
+    if (art.objects[i].images.find((x) => x.imageid === artID) !== undefined) {
+      imageArray = art.objects[i].images.find((x) => x.imageid === artID);
       descriptions = art.objects[i];
     }
   }
@@ -20,17 +20,16 @@ function ArtDesciption() {
     return (
       <div key={index} className="border-hover">
         <Link to={"/galleries/" + galleryId + "/art/" + photo.imageid}>
-          <img src={photo.baseimageurl} className="small-image" />
+          <img
+            src={photo.baseimageurl}
+            className="small-image"
+            alt={descriptions.title}
+          />
         </Link>
       </div>
     );
   });
   let galleryName = art.name;
-
-  console.log("gallery", art);
-  console.log("art", art.name);
-  console.log("image", imageArray);
-  console.log("description", descriptions);
 
   let imageDescription = "";
 
@@ -43,7 +42,11 @@ function ArtDesciption() {
   return (
     <div>
       <a href={descriptions.url} className="d-flex justify-content-center">
-        <img src={imageArray.baseimageurl} className="selected-img" />
+        <img
+          src={imageArray.baseimageurl}
+          className="selected-img"
+          alt={descriptions.title}
+        />
       </a>
       <p className="text-center text-secondary box-shadow">
         Photo © President and Fellows of Harvard College
@@ -60,7 +63,7 @@ function ArtDesciption() {
         {artPhotos}
       </div>
       <Link to=".." className="text-decoration-none ">
-        <h3 className="text-black return-link pb-5">
+        <h3 className="text-black text-center return-link pb-5 mt-5 pt-5">
           Return to {galleryName} gallery
         </h3>
       </Link>

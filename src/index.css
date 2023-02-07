@@ -41,6 +41,10 @@ body {
   transition: all 200ms ease-in-out;
 }
 
+.selected-img {
+  max-width: 80%;
+}
+
 ul {
   padding: 0;
   list-style: none;

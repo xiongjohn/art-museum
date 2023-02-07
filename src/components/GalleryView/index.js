@@ -2,6 +2,7 @@ import { Outlet, useParams } from "react-router-dom";
 
 function GalleryView({ galleries }) {
   let { galleryId } = useParams();
+  // eslint-disable-next-line
   let gallery = galleries.find((x) => x.galleryid == galleryId);
 
   return (
